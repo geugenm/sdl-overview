@@ -5,11 +5,11 @@ PROJECT_NAME           = My C++ Project
 PROJECT_NUMBER         = 1.0
 
 # Set the input and output directories
-INPUT                  = src
-OUTPUT_DIRECTORY       = docs
+INPUT                  = src cmake
+OUTPUT_DIRECTORY       = build/docs
 
 # Specify which files should be included in the documentation
-FILE_PATTERNS          = *.cpp *.h *.cxx *.hxx
+FILE_PATTERNS          = *.cpp *.h *.cxx *.hxx *.c *.hpp *.cmake
 
 # Enable some useful output formats
 GENERATE_HTML          = YES
@@ -18,20 +18,6 @@ GENERATE_LATEX         = NO
 # Specify some useful settings for HTML output
 HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
-GENERATE_SINGLE_HTML = YES
-
-# Specify some useful settings for LaTeX output
-LATEX_OUTPUT           = latex
-LATEX_FILE_EXTENSION   = .tex
-LATEX_EXTRA_FILES      =
-
-# Specify some useful settings for PDF output
-PDF_OUTPUT             = pdf
-PDF_HYPERLINKS         = YES
-PDF_EXTRA_FILES        =
-
-# Specify some useful settings for CHM output
-GENERATE_CHM           = NO
 
 # Specify some useful settings for RTF output
 GENERATE_RTF           = NO
