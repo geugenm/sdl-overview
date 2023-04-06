@@ -119,3 +119,5 @@ cmake-build-*/
 # CLion
 .cmake/
 compile_commands.json
+
+downloads/
