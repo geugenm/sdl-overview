@@ -10,14 +10,12 @@ jobs:
   build:
     runs-on: arch-latest
 
-    strategy:
-      matrix:
-        os: [ arch-latest ]
-        cmake: [ '3.25.0' ]
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: master
+          fetch-depth: 1
 
       - name: Update git submodules
         run: git submodule update --init --recursive
