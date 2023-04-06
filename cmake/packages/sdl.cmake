@@ -1,4 +1,4 @@
-include(cmake/CPM.cmake)
+include(cmake/package_manager.cmake)
 
 CPMAddPackage(
         NAME SDL3

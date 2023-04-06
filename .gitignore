@@ -120,4 +120,4 @@ cmake-build-*/
 .cmake/
 compile_commands.json
 
-downloads/
+cache/
