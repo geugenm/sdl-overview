@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 include_directories(${PROJECT_NAME} src/)
 add_executable(${PROJECT_NAME} src/main.cxx)
 
-include(cmake/packages/sdl.cmake)
+include(cmake/package_manager.cmake)
+include(${CPM_PACKAGES}/sdl.cmake)
 
 target_link_libraries(${PROJECT_NAME} SDL3::SDL3)

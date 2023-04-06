@@ -76,6 +76,7 @@
 *.su
 *.idb
 *.pdb
+*.lock
 
 # Kernel Module Compile Results
 *.mod*
@@ -118,3 +119,5 @@ cmake-build-*/
 # CLion
 .cmake/
 compile_commands.json
+
+cache/
