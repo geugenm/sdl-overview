@@ -1,11 +1,11 @@
 # Doxyfile for My C++ Project
 
 # Set the project name and version
-PROJECT_NAME           = My C++ Project
+PROJECT_NAME           = SDL Overview
 PROJECT_NUMBER         = 1.0
 
 # Set the input and output directories
-INPUT                  = src cmake
+INPUT                  = src cmake README.md
 OUTPUT_DIRECTORY       = build/docs
 
 # Specify which files should be included in the documentation
