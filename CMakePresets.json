@@ -22,6 +22,22 @@
       }
     },
     {
+      "name": "Test",
+      "displayName": "Test",
+      "description": "Build with tests and extra checks",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/test",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_FLAGS": "-Ofast -DNDEBUG -march=native -Wall -Wextra -Wpedantic -Wconversion -Wno-unused-function",
+        "CMAKE_C_FLAGS": "-Ofast -DNDEBUG -march=native -Wall -Wextra -Wpedantic -Wconversion -Wno-unused-function",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_CXX_FLAGS_RELEASE": "-fsanitize=address,undefined",
+        "CMAKE_C_FLAGS_RELEASE": "-fsanitize=address,undefined",
+        "BUILD_TESTS": "ON"
+      }
+    },
+    {
       "name": "Release",
       "displayName": "Release",
       "description": "Release build with aggressive optimizations and without assertions.",
