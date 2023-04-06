@@ -4,3 +4,6 @@
 [submodule "module/cpm-cmake"]
 	path = module/cpm-cmake
 	url = https://github.com/cpm-cmake/CPM.cmake.git
+[submodule "module/google-test"]
+	path = module/google-test
+	url = https://github.com/google/googletest.git
