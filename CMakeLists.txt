@@ -8,21 +8,21 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_executable(${PROJECT_NAME} ${SRC_DIR}/main.cxx)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE ${SRC_DIR})
 
 
 include(cmake/package_manager.cmake)
 
-include(${CPM_PACKAGES}/sdl.cmake)
-
-
 include(${CPM_PACKAGES}/ccache.cmake)
 
 
-target_link_libraries(${PROJECT_NAME} SDL3::SDL3)
+include(${CPM_PACKAGES}/sdl.cmake)
 
-include(${CPM_PACKAGES}/google_test.cmake)
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)
 
-add_executable(my_test test/main.cxx)
 
-target_link_libraries(my_test PRIVATE GTest::GTest GTest::Main)
+option(BUILD_TESTS "Build tests" ON)
+if (BUILD_TESTS)
+    include(${CPM_PACKAGES}/google_test.cmake)
+    add_subdirectory(test)
+endif ()
