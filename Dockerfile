@@ -17,7 +17,7 @@ RUN pacman -Syu --noconfirm && \
 COPY . /app
 
 # Set the compiler flags
-ENV CXXFLAGS="-std=c++20 -Wall -Wextra -pedantic -Werror"
+ENV CXXFLAGS="-std=c++23 -Wall -Wextra -pedantic -Werror"
 
 # Build the project using CMakePresets.json
 RUN cmake --preset=Release .
