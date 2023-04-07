@@ -43,3 +43,4 @@ jobs:
       - name: Build the project using CMake
         run: |
           cmake --preset=Release .
+          cmake --build . --config Release
