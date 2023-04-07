@@ -6,10 +6,11 @@
       <img src="https://img.shields.io/github/issues-raw/geugenm/advanced-hello-world?style=for-the-badge" alt="GitHub Issues">
     </a>
     <img src="https://img.shields.io/badge/platform-linux%20-informational?style=for-the-badge&amp;logo=manjaro" alt="Platforms">
-    <a href="https://en.cppreference.com/w/cpp/17">
+    <a href="https://en.cppreference.com/w/cpp/23">
       <img src="https://img.shields.io/badge/cpp-23-informational?style=for-the-badge&amp;logo=cplusplus" alt="CPP version">
     </a>
   </div>
+   <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/geugenm/sdl-overview/build_ubuntu_latest.yml?style=for-the-badge">
 </div>
 
 
@@ -44,7 +45,7 @@ different language.
 
 ## License
 
-This project is licensed under the AGPL-3.0 License - see the `LICENSE` file for details.
+This project is licensed under the AGPL-3.0 License — see the `LICENSE` file for details.
 
 ## Acknowledgments
 
