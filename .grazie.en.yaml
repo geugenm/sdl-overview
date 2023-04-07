@@ -1,0 +1,91 @@
+# Check for common spelling errors and typos
+extends: existence
+message: "Possible spelling mistake: '%s'"
+level: warning
+scope:
+  - text.plain
+  - text.c++
+tokens:
+  - alloc
+  - buffer
+  - initialize
+  - intialize
+  - lenght
+  - leght
+  - methid
+  - recieve
+  - recive
+  - relese
+  - releas
+  - suceed
+  - succed
+  - swith
+  - witch
+  - whith
+  - wth
+  - static_cast  # avoid using C-style casts
+
+---
+# Check for syntax and semantic errors using Clang Tidy
+extends: sequence
+message: "Clang-Tidy says: '%s'"
+level: warning
+scope:
+  - text.c++
+check:
+  - command: clang-tidy
+    args: ["-header-filter=.*", "--checks=bugprone-*,performance-*,readability-*", "%filename%"]
+    regex: "^[^:]*:(?P<line>\\d+):(?P<column>\\d+):\\s+(?P<message>.+)$"
+
+---
+# Check for potential runtime errors using AddressSanitizer
+extends: sequence
+message: "AddressSanitizer says: '%s'"
+level: warning
+scope:
+  - text.c++
+check:
+  - command: clang++
+    args: ["-fsanitize=address", "-O1", "-g", "%filename%"]
+    regex: "^==\\d+==ERROR: AddressSanitizer: (?P<message>.*)$"
+
+---
+# Check for undefined behavior using UndefinedBehaviorSanitizer
+extends: sequence
+message: "UndefinedBehaviorSanitizer says: '%s'"
+level: warning
+scope:
+  - text.c++
+check:
+  - command: clang++
+    args: ["-fsanitize=undefined", "-O1", "-g", "%filename%"]
+    regex: "^.*:(?P<line>\\d+):(?P<column>\\d+):.*UndefinedBehaviorSanitizer: (?P<message>.*)$"
+
+---
+# Check for potential memory leaks using LeakSanitizer
+extends: sequence
+message: "LeakSanitizer says: '%s'"
+level: warning
+scope:
+  - text.c++
+check:
+  - command: clang++
+    args: ["-fsanitize=leak", "-O1", "-g", "%filename%"]
+    regex: "^.*:(?P<line>\\d+):(?P<column>\\d+):.*LeakSanitizer: (?P<message>.*)$"
+
+---
+# Check for code style issues using Clang-Format
+extends: conditional
+message: "Clang-Format suggests: '%s'"
+level: suggestion
+scope:
+  - text.c++
+check:
+  - command: clang-format
+    args: ["--style=file", "--dry-run", "--Werror", "%filename%"]
+    regex: "(?P<message>.*): (?P<line>\\d+):(?P<column>\\d+): error: .*$"
+  - command: clang-format
+    args: ["--style=file", "--dry-run", "-output-replacements-xml", "%filename%"]
+    regex: "<replacement[^>]*>.*<\\/replacement>"
+ignore:
+  - includes  # ignore warnings in #include directives
