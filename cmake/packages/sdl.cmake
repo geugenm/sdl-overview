@@ -7,7 +7,7 @@ CPMAddPackage(
         OPTIONS
             "SDL_ATOMIC OFF"
             "SDL_STATIC ON"
-            "SDL_SHARED OFF"
+            "SDL_SHARED ON"
             "SDL_VIRTUAL_JOYSTICK OFF"
             "SDL_HIDAPI_JOYSTICK OFF"
             "SDL_HAPTIC OFF"
