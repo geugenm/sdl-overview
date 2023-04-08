@@ -1,5 +1,6 @@
 # Increase the heap size to 1GB
 --main-stacksize=1073741824
+--massif-heap=1073741824
 
 # Turn on all error checks
 --error-exitcode=1
