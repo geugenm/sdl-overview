@@ -1,42 +1,30 @@
-# editorconfig for C++ projects
+# editorconfig for C++, C, and CMake projects
 root = true
 
-# all C++ files
-[*.{h,hpp,c,cpp,inl,hxx,cxx}]
-
-# use spaces for indentation
-indent_style = space
-
-# set indentation size to 4 spaces
-indent_size = 4
-
-# use UTF-8 character encoding
+# all C++ and C files
+[*.{h,hpp,c,cpp,inl,cxx,hxx}]
 charset = utf-8
-
-# insert a newline character at the end of the file
-insert_final_newline = true
-
-# remove trailing whitespace at the end of each line
-trim_trailing_whitespace = true
-
-# define tab width to be 4 spaces
+indent_style = space
+indent_size = 4
 tab_width = 4
-
-# enforce a maximum line length of 80 characters
+insert_final_newline = true
+trim_trailing_whitespace = true
 max_line_length = 80
 
-# set the order of include statements
-include_order = none
+# CMake files
+[*.{cmake, CMakeLists.txt}]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
-# sort include statements alphabetically
-include_sort_order = true
-
-# group include statements by project-level headers, system-level headers,
-# and then other headers
-include_categories = "project,system,none"
-
-# add a new line after each include block
-include_block_padding = 1
-
-# define the C++ standard to be used
-standard = c++20
+# CMake cache files
+[CMakeCache.txt]
+charset = utf-8
+indent_style = space
+indent_size = 2
+tab_width = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = off
