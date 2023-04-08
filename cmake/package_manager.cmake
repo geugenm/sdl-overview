@@ -1,4 +1,4 @@
-include(module/cpm-cmake/cmake/CPM.cmake)
+include(modules/cpm-cmake/cmake/CPM.cmake)
 
 set(CPM_PACKAGES ${CMAKE_CURRENT_LIST_DIR}/packages)
 
