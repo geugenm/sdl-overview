@@ -24,8 +24,16 @@ This repository provides an overview of how to connect and configure SDL 3.0.0.
     - `cmake 3.25.0+`
     - `cpp compiler with cpp 23 support`
     - `ninja`
-3. Compile
-    - `cmake --preset=Release .`
+3. Compile:
+```bash
+cmake --preset=Release .
+cd build/release
+cmake --build . --config Release
+```
+For more build configurations see [CMakePresets.json](https://github.com/geugenm/sdl-overview/blob/master/CMakePresets.json)
+
+Also,
+you can use an automized [build.sh](https://github.com/geugenm/sdl-overview/blob/master/scripts/build.sh) in `scripts` folder
 
 ## Documentation
 
