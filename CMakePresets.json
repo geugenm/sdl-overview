@@ -32,15 +32,12 @@
         "CMAKE_CXX_FLAGS": "-Og -g -Wall -Wextra -Wpedantic -Wconversion -Wno-unused-function",
         "CMAKE_C_FLAGS": "-Og -g -Wall -Wextra -Wpedantic -Wconversion -Wno-unused-function",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_CXX_FLAGS_DEBUG": "-fsanitize=address,undefined",
-        "CMAKE_C_FLAGS_DEBUG": "-fsanitize=address,undefined",
         "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
         "CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
         "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG",
         "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG",
         "CMAKE_CXX_FLAGS_MINSIZEREL": "-Os -DNDEBUG",
-        "CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG",
-        "VALGRIND": "valgrind --leak-check=full --show-leak-kinds=all"
+        "CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG"
       }
     },
     {
