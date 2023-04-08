@@ -18,11 +18,13 @@ int main(int argc, char* argv[]) {
 }
 
 /**
- * @brief The constructor of the SDLApplication class that initializes SDL components
+ * @brief The constructor of the SDLApplication class that initializes SDL
+ * components
  */
 SDLApplication::SDLApplication() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "SDL initialization failed: " << SDL_GetError() << std::endl;
+        std::cerr << "SDL initialization failed: " << SDL_GetError()
+                  << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
@@ -33,9 +35,11 @@ SDLApplication::SDLApplication() {
         std::exit(EXIT_FAILURE);
     }
 
-    renderer_ = SDL_CreateRenderer(window_, nullptr, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    renderer_ = SDL_CreateRenderer(
+        window_, nullptr, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (renderer_ == nullptr) {
-        std::cerr << "Renderer creation failed: " << SDL_GetError() << std::endl;
+        std::cerr << "Renderer creation failed: " << SDL_GetError()
+                  << std::endl;
         SDL_DestroyWindow(window_);
         SDL_Quit();
         std::exit(EXIT_FAILURE);
@@ -43,7 +47,8 @@ SDLApplication::SDLApplication() {
 }
 
 /**
- * @brief The destructor of the SDLApplication class that releases the SDL components
+ * @brief The destructor of the SDLApplication class that releases the SDL
+ * components
  */
 SDLApplication::~SDLApplication() {
     SDL_DestroyRenderer(renderer_);
@@ -52,7 +57,8 @@ SDLApplication::~SDLApplication() {
 }
 
 /**
- * @brief The main loop of the application that runs until it's stopped by the user
+ * @brief The main loop of the application that runs until it's stopped by the
+ * user
  */
 void SDLApplication::Run() {
     while (is_running_) {
