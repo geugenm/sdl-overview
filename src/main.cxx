@@ -11,7 +11,7 @@
  * @param argv The list of command-line arguments
  * @return The exit status of the application
  */
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[]) -> int {
     SDLApplication app;
     app.Run();
     return EXIT_SUCCESS;
