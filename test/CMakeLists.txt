@@ -10,7 +10,7 @@ target_link_libraries(Test_Shared_Compilation PRIVATE GTest::GTest SDL3::SDL3-sh
 
 set(SHARED_LIB_PATH ${CMAKE_CURRENT_LIST_DIR}/dll)
 
-option(USE_CUSTOM_SHARED_LIB_PATH "Use a custom shared library search path" ON)
+option(USE_CUSTOM_SHARED_LIB_PATH "Use a custom shared library search path" OFF)
 
 if (USE_CUSTOM_SHARED_LIB_PATH AND SHARED_LIB_PATH)
     add_executable(Test_Custom_Dynamic_API sdl_compilation.cxx)
@@ -21,7 +21,7 @@ if (USE_CUSTOM_SHARED_LIB_PATH AND SHARED_LIB_PATH)
             )
 endif()
 
-option(USE_CUSTOM_SDL_SHARED_LIB "Use custom SDL shared libraries. NOTE: Will fail if something was injected" ON)
+option(USE_CUSTOM_SDL_SHARED_LIB "Use custom SDL shared libraries. NOTE: Will fail if something was injected" OFF)
 
 if (USE_CUSTOM_SDL_SHARED_LIB AND SHARED_LIB_PATH)
     add_executable(Test_DLL_Injection sdl_compilation.cxx)
