@@ -39,7 +39,7 @@ you can use an automized [build.sh](https://github.com/geugenm/sdl-overview/blob
 
 All you need is to install doxygen and run these commands:
 ```bash
-doxygen .doxygen
+doxygen docs/.doxygen
 cd scripts
 sh view_docs.sh
 ```

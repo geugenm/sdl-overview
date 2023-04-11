@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd ..
-
 # Include the .env file
 if [[ -f .env ]]; then
     source .env
@@ -17,7 +15,7 @@ if [ ! -d "$DOCS_PATH" ]; then
     fi
 
     # Attempt to build the documentation
-    doxygen .doxygen
+    doxygen docs/.doxygen
 
     # Check if the build/docs directory now exists
     if [ ! -d "$DOCS_PATH" ]; then
